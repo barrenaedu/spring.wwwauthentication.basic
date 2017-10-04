@@ -2,6 +2,6 @@ package com.service;
 
 public interface SecurityManager {
 
-    public boolean isAuthorized(String action, String authString);
+    public boolean isAuthorized(String resource, String action, String authString);
 
 }

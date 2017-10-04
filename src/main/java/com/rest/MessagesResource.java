@@ -30,7 +30,7 @@ public class MessagesResource {
     @GET
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public Response getMessages(@HeaderParam("authorization") String authString) {
-        if (!securityManager.isAuthorized("LIST_MESSAGES", authString)) {
+        if (!securityManager.isAuthorized("MESSAGES","VIEW", authString)) {
             return Response.status(Response.Status.UNAUTHORIZED).build();
         }
         Collection<Message> msgs = messageManager.getMessages();

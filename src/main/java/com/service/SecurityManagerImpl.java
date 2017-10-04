@@ -14,7 +14,7 @@ public class SecurityManagerImpl implements SecurityManager {
     private final static Logger LOGGER = LoggerFactory.getLogger(SecurityManagerImpl.class);
 
     @Override
-    public boolean isAuthorized(String action, String authString) {
+    public boolean isAuthorized(String resource, String action, String authString) {
         if (StringUtils.isEmpty(authString)) {
             return false;
         }
@@ -37,12 +37,13 @@ public class SecurityManagerImpl implements SecurityManager {
         }
         LOGGER.info("Decoded auth: {}", decodedAuth);
         final StringTokenizer tok = new StringTokenizer(decodedAuth, ":");
-        return isAuthorized(action, tok.nextToken(), tok.nextToken());
+        return isAuthorized(resource, action, tok.nextToken(), tok.nextToken());
     }
 
-    private boolean isAuthorized(String action, String user, String pass) {
+    private boolean isAuthorized(String resource, String action, String user, String pass) {
         LOGGER.info("User: '{}'", user);
         LOGGER.info("Pass: '{}'", pass);
+        LOGGER.info("Resource: {}", resource);
         LOGGER.info("Action: {}", action);
         return "Aladdin".equals(user) && "open sesame".equals(pass);
     }
