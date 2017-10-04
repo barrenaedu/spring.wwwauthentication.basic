@@ -19,21 +19,6 @@ public class MessageManagerImpl implements MessageManager {
     }
 
     @Override
-    public boolean updateMessage(Message msg) {
-        return messages.replace(msg.getId(), msg) != null;
-    }
-
-    @Override
-    public boolean deleteMessage(long id) {
-        return messages.remove(id) != null;
-    }
-
-    @Override
-    public Message getMessage(long id) {
-        return messages.get(id);
-    }
-
-    @Override
     public Collection<Message> getMessages() {
         return messages.values();
     }

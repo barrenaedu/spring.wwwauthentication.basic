@@ -19,7 +19,6 @@
         <jdk.version>1.8</jdk.version>
         <java.version>1.8</java.version>
         <commons-lang.version>3.6</commons-lang.version>
-        <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
     </properties>
 
     <dependencies>
@@ -66,21 +65,6 @@
                     <target>${jdk.version}</target>
                 </configuration>
             </plugin>
-
-            <!-- Maven sufire (Avoid errors during test phase with the certificate) -->
-            <!--
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven-surefire-plugin.version}</version>
-                <configuration>
-                    <argLine>
-                        -Djavax.net.ssl.keyStore=${basedir}/keystore.jks
-                        -Djavax.net.ssl.keyStorePassword=123456
-                    </argLine>
-                </configuration>
-            </plugin>
--->
         </plugins>
     </build>
 
