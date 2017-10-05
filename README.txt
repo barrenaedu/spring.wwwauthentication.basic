@@ -1,4 +1,4 @@
-mvn archetype:generate -DgroupId=spring.wwwauthentication -DartifactId=spring.authentication.basic -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+mvn archetype:generate -DgroupId=spring.wwwauthentication -DartifactId=spring.wwwauthentication.basic -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
 
 Readme
 ------
